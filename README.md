@@ -11,54 +11,87 @@ font-family: Arial, sans-serif;
 direction: rtl;
 margin:0;
 background:#f5f7fb;
+line-height:1.7;
 }
 
+/* الهيدر */
 header{
 background:linear-gradient(90deg,#0d6efd,#0a58ca);
 color:white;
-padding:25px;
+padding:30px 15px;
 text-align:center;
 }
 
+/* القائمة */
 nav{
 background:#111;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
 padding:10px;
-text-align:center;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 nav a{
 color:white;
-margin:10px;
+margin:5px 10px;
 text-decoration:none;
 font-weight:bold;
+padding:8px 12px;
+border-radius:5px;
 }
 
+nav a:hover{
+background:#0d6efd;
+}
+
+/* المحتوى */
 .container{
-padding:20px;
+padding:15px;
+max-width:1000px;
+margin:auto;
 }
 
 .card{
 background:white;
-padding:20px;
+padding:15px;
 margin-bottom:20px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
+border-radius:12px;
+box-shadow:0 0 10px rgba(0,0,0,0.08);
 }
 
 .card img{
 width:100%;
-border-radius:8px;
+height:auto;
+border-radius:10px;
 margin-bottom:10px;
+display:block;
 }
 
 h2{
 color:#0d6efd;
 }
 
-ul{
-line-height:1.8;
+/* زر */
+button{
+background:#0d6efd;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:6px;
+cursor:pointer;
+margin-top:10px;
+width:100%;
+font-size:16px;
 }
 
+button:hover{
+background:#0a58ca;
+}
+
+/* الفوتر */
 footer{
 background:#111;
 color:white;
@@ -67,48 +100,55 @@ padding:15px;
 margin-top:20px;
 }
 
-button{
-background:#0d6efd;
-color:white;
-border:none;
-padding:10px 15px;
-border-radius:5px;
-cursor:pointer;
+/* 📱 تحسين الجوال */
+@media (max-width:768px){
+header h1{
+font-size:22px;
 }
 
-button:hover{
-background:#0a58ca;
+nav a{
+font-size:14px;
 }
 
+.card{
+padding:12px;
+}
+
+h2{
+font-size:18px;
+}
+}
 </style>
 </head>
 
 <body>
 
-<header>
+<header id="home">
 <h1>التوعية بالهندسة الاجتماعية</h1>
 <p>احمِ نفسك من محاولات الاحتيال الإلكتروني</p>
 </header>
 
 <nav>
-<a href="#">الرئيسية</a>
-<a href="#">أنواع الهجمات</a>
-<a href="#">الحماية</a>
-<a href="#">تواصل</a>
+<a href="#home">الرئيسية</a>
+<a href="#types">أنواع الهجمات</a>
+<a href="#protection">الحماية</a>
+<a href="#contact">تواصل</a>
 </nav>
 
 <div class="container">
 
+<!-- تعريف -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1563986768609-322da13575f3">
+<img src="https://images.unsplash.com/photo-1563986768609-322da13575f3" loading="lazy" alt="social engineering">
 <h2>ما هي الهندسة الاجتماعية؟</h2>
 <p>
 هي أسلوب خداع يستخدمه المهاجم للحصول على معلومات حساسة مثل كلمة المرور أو رمز التحقق من خلال التلاعب بالمستخدم.
 </p>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b">
+<!-- الأنواع -->
+<div class="card" id="types">
+<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b" loading="lazy" alt="cyber attack">
 <h2>أنواع الهجمات</h2>
 <ul>
 <li>التصيد الاحتيالي Phishing</li>
@@ -119,8 +159,9 @@ background:#0a58ca;
 </ul>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87">
+<!-- الحماية -->
+<div class="card" id="protection">
+<img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87" loading="lazy" alt="security">
 <h2>كيف تحمي نفسك؟</h2>
 <ul>
 <li>لا تضغط روابط مجهولة</li>
@@ -133,12 +174,11 @@ background:#0a58ca;
 <button onclick="alert('أحسنت! تذكر لا تشارك معلوماتك أبداً')">
 نصيحة أمنية
 </button>
-
 </div>
 
 </div>
 
-<footer>
+<footer id="contact">
 <p>مشروع توعوي بالأمن السيبراني - Social Engineering Awareness</p>
 </footer>
 
